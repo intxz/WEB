@@ -1,0 +1,160 @@
+.container{
+    position: relative;
+}
+
+#iBtn {
+    width: 90px;
+    height: 90px;
+    background: rgb(235, 235, 235);
+    border-radius: 50%;
+    position: relative;
+    transition: 1s ease;
+    animation: drop 3s forwards ease-out;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#iBtn:hover {
+    scale: 1.15;
+    background: white;
+    box-shadow: 0 0 5px whitesmoke;
+}
+
+#iIcon {
+    font-family: 'Material Symbols Outlined', sans-serif;
+    margin: auto;
+    font-size: 70px;
+    transition: scale;
+    color: #2a2a2a;
+    user-select: none;
+}
+
+#oBtn {
+    width: 90px;
+    height: 90px;
+    background: rgb(235, 235, 235);
+    border-radius: 50%;
+    position: relative;
+    transition: 1s ease;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#oBtn:hover {
+    scale: 1.15;
+    background: white;
+    box-shadow: 0 0 5px whitesmoke;
+}
+
+#oIcon {
+    font-family: 'Material Symbols Outlined', sans-serif;
+    margin: auto;
+    font-size: 70px;
+    color: #2a2a2a;
+    user-select: none;
+}
+
+#iIcon.active {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.submenu {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.info {
+    top: -150px;
+    transform: translate(-50%, -50%);
+}
+
+.login {
+    left: 250px;
+    transform: translate(-50%, -50%);
+}
+
+.aboutUs{
+    top: 250px;
+    transform: translate(-50%, -50%);
+}
+
+.register {
+    left: -150px;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes drop {
+    from {
+        opacity: 0;
+        transform: translateY(-250px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes summon {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes unsummon {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+}
+
+@media (prefers-reduce-motion: reduce) {
+    #iBtn {
+        transition: none;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image:url('img/background.webp');
+}
+
+#container1 {
+    background-color: rgba(250,240,245,0.9);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    transition: all 1s ease;
+    z-index: 100;
+}
+
+
+
+

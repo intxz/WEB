@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelectorAll('.submenu');
+            const iIcon = document.getElementById('iIcon');
+            const oIcon = document.getElementById('oIcon')
+            iIcon.classList.toggle('active');
+            menu.forEach((submenu) => { 
+                submenu.classList.toggle('hidden');
+            });
+            animate1();
+        }
+        function animate1() {
+        const utilityElements = document.querySelectorAll('.submenu.utility');
+            utilityElements.forEach((submenu) => {
+            submenu.classList.add('active');
+            submenu.style.animation = 'summon 1s forwards ease-out';
+        });
+        }
+        function animate2() {
+        const utilityElements = document.querySelectorAll('.submenu.utility');
+            utilityElements.forEach((submenu) => {
+            submenu.style.animation = 'unsummon 1s forwards ease-out';
+        });
+        }
+        function goLogin() {
+            window.location.href= 'login.html'
+        }
+        function goRegister(){
+            window.location.href= 'register.html'
+        }
+        window.onload = function() {
+            var container = document.getElementById('container1');
+            container.style.visibility = 'hidden';
+            container.style.opacity = '0';
+        }
+    </script>
+    <title>EA</title>
+</head>
+<body>
+    <div id="container1"></div>
+    <div class="container">
+        <div id="iBtn" class="btn" onclick="toggleMenu()" >
+            <span id="iIcon" class="material-symbols-outlined">menu</span>
+            <div class="submenu close hidden" onclick="animate2()">
+                <span id="oIcon" class="material-symbols-outlined">close</span>
+            </div>
+        </div>
+        <div class="submenu info hidden utility">
+            <div id="oBtn">
+                <span id="oIcon" class="material-symbols-outlined">info</span>
+            </div>
+        </div>
+        <div class="submenu login hidden utility" onclick="goLogin()">
+            <div id="oBtn">
+                <span id="oIcon" class="material-symbols-outlined">account_circle</span>
+            </div>
+        </div>
+        <div class="submenu aboutUs hidden utility">
+            <div id="oBtn">
+                <span id="oIcon" class="material-symbols-outlined">deployed_code_account</span>
+            </div>
+        </div>
+        <div class="submenu register hidden utility" onclick="goRegister()">
+            <div id="oBtn">
+                <span id="oIcon" class="material-symbols-outlined">person_add</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
