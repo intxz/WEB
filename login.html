@@ -10,18 +10,29 @@
             container.style.visibility = 'hidden';
             container.style.opacity = '0';
         }
+        function sendForm(){
+            document.getElementById("form").submit();
+        }
+        function handleEnterKey(event) {
+            if (event.keyCode === 13){
+                sendForm();
+            }
+        }
     </script>
     <title>Login</title>
 </head>
 <body>
     <div id="container">
     </div>
-    <fieldset id="yep">
-        <h1>Login</h1>
-        <input type="text" name="username" id="username" required placeholder="Username">
-        <input type="password" name="password" id="password" required placeholder="Password">
-        <input type="button" value="Login">
-        <p id="goRegister">Don't have account? <a href="register.html">Register</a></p>
-    </fieldset>
+    <form id="form" action="" method="post">
+        <fieldset id="yep">
+            <h1>Login</h1>
+            <input type="text" name="username" id="username" required placeholder="Username">
+            <input type="password" name="password" id="password" required placeholder="Password">
+            <input type="submit" value="Login">
+            <p id="goRegister">Don't have account? <a href="register.html">Register</a></p>
+        </fieldset>
+    </form>
+    
 </body>
 </html>

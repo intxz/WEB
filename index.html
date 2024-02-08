@@ -35,6 +35,9 @@
         function goRegister(){
             window.location.href= 'register.html'
         }
+        function goAboutUs() {
+            window.location.href= 'aboutUs.html'
+        }
         window.onload = function() {
             var container = document.getElementById('container1');
             container.style.visibility = 'hidden';
@@ -62,7 +65,7 @@
                 <span id="oIcon" class="material-symbols-outlined">account_circle</span>
             </div>
         </div>
-        <div class="submenu aboutUs hidden utility">
+        <div class="submenu aboutUs hidden utility" onclick="goAboutUs()">
             <div id="oBtn">
                 <span id="oIcon" class="material-symbols-outlined">deployed_code_account</span>
             </div>
